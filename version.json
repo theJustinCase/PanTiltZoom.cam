@@ -1,0 +1,14 @@
+{
+    "ios": {
+        "current": "2.0.3",
+        "url": "https://apps.apple.com/app/id1223221763"
+    },
+    "android": {
+        "current": "2.0.3",
+        "url": "https://play.google.com/store/apps/details?id=org.wmo.pantiltzoom"
+    },
+    "amazon": {
+        "current": "2.0.3",
+        "url": "https://www.amazon.com/dp/B07D47GL4W/ref=cm_sw_r_cp_ep_dp_jNvpBbP0DFNRG"
+    }
+}
