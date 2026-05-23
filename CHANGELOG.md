@@ -2,7 +2,7 @@
 
 All notable changes to the PanTiltZoom app are documented in this file.
 
-## [Unreleased] - 2026-04-08 to present
+## [Unreleased]
 
 ### Added
 
