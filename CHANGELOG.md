@@ -2,24 +2,42 @@
 
 All notable changes to the PanTiltZoom app are documented in this file.
 
-## [Unreleased]
+## [2.0.4] - Unreleased
 
 ### Added
 
 - New OTA update interface with options to view changelog and decline updates.
 - Better update transparency with additional OTA information in app diagnostics and About.
+- Snapshot retry option for preset images.
+- Custom segmented switch UI with a wide-border variant for settings controls.
 
 ### Changed
 
-- Camera import confirmation now more clearly explains what will change.
+- App config import confirmation now more clearly explains what will change.
+- App config import now checks for invalid settings
 - Camera communication handling improved for more reliable response matching and retries.
 - Improved Sony VISCA-over-IP support with better response correlation, retry behavior, and command reliability.
+- Motion command completion can now resolve on ACK for improved control responsiveness.
+- Zoom and focus inputs now use feedback-based coalescing to reduce command flooding.
+- Camera connection gating now relies on successful ping or camera response before marking a connection as healthy.
+- Preset labels now add stronger text contrast over image backgrounds.
+- Replaced the external segmented-control dependency with the in-app SegmentedSwitch implementation.
 
 ### Fixed
 
 - Multiple startup and connection edge cases that could trigger duplicate camera connect attempts.
 - Stability issues around discovery/network socket cleanup in error scenarios.
 - Zoom and focus error-handling edge cases.
+- Fixed bug that would create invalid presets if the camera didn't respond correctly
+- Rare crash when rapidly tapping controls while switching cameras could tear down a connection mid-handshake.
+- Suppressed spurious error reports when a camera was offline at app startup.
+- Suppressed spurious error reports when a camera command timed out from a quick joystick, zoom, focus, or preset tap.
+- Connection deadlock and write-command registration race conditions that could stall camera communication.
+- Sony VISCA-over-IP setter reliability by serializing setters and safely absorbing late post-ACK frames.
+- Unhandled ping failure exceptions and false-positive connect success when cameras did not actually respond.
+- Control-flow edge case when accessing controls during camera switching.
+- Simultaneous joystick + zoom toggle behavior and zoom polling limitations.
+- Preset save/import robustness by rejecting invalid VISCA inquiry payloads and scrubbing invalid migrated preset data.
 
 ## [2.0.3] - 2026-04-08
 
