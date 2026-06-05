@@ -2,7 +2,13 @@
 
 All notable changes to the PanTiltZoom app are documented in this file.
 
-## [2.0.4] - Unreleased
+## [2.0.5] - Unreleased
+
+### Changed
+
+- Improved camera discovery to include port.
+
+## [2.0.4] - 2026-06-04
 
 ### Added
 
